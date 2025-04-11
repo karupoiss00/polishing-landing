@@ -5,6 +5,7 @@ import Link from "@/components/link/Link";
 import NextLink from "next/link";
 import config from '../../config/config.json';
 import {ANCHOR_IDS, getAnchor} from "@/components/anchors/anchors";
+import logo from '../../../public/logo.png'
 
 const LOGO_SIZE = 48
 
@@ -56,7 +57,7 @@ function CompanyName() {
         <div className="flex flex-shrink-0 flex-row items-center gap-[20px] select-none cursor-pointer">
             <NextLink href="/">
                 <Image
-                    src="/logo.png"
+                    src={logo}
                     alt="logo"
                     width={LOGO_SIZE}
                     height={LOGO_SIZE}
