@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "@/components/link/Link";
 import NextLink from "next/link";
 import config from '../../config/config.json';
-import {ANCHOR_IDS, getAnchor} from "@/components/anchors/anchors";
+import {ANCHOR_IDS, getAnchor} from "@/anchors/anchors";
 import logo from '../../../public/logo.png'
 
 const LOGO_SIZE = 48

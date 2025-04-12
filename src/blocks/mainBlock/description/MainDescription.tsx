@@ -1,6 +1,6 @@
 import Link from "@/components/link/Link";
-import config from '../../config/config.json'
-import {ANCHOR_IDS, getAnchor} from "@/components/anchors/anchors";
+import config from '../../../config/config.json'
+import {ANCHOR_IDS, getAnchor} from "@/anchors/anchors";
 
 const TEXTS = {
     heading: 'Полировка и выкуп\nApple Watch в Москве',

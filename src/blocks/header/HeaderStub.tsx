@@ -1,4 +1,4 @@
-import {ANCHOR_IDS} from "@/components/anchors/anchors";
+import {ANCHOR_IDS} from "@/anchors/anchors";
 
 function HeaderStub() {
     return (

@@ -1,13 +1,14 @@
 import React from 'react';
 import {DualLayoutSection} from "@/components/dualSection/DualSection";
-import {MainDescription} from "@/components/mainDescription/MainDescription";
 import Image from "next/image";
-import mainImage from '../../public/mainImage.jpg'
+import mainImage from '../../../public/mainImage.jpg'
+import {PolishingDescription} from "@/blocks/aboutPolishingBlock/polishingDescription/PolishingDescription";
+import {ANCHOR_IDS} from "@/anchors/anchors";
 
-function MainBlock() {
+function AboutPolishing() {
     return (
-        <DualLayoutSection>
-            <MainDescription />
+        <DualLayoutSection id={ANCHOR_IDS.polishing}>
+            <PolishingDescription />
             <div className="flex justify-end flex-grow">
                 <div className="fmax-w-[335px] relative lg:max-w-[620px]">
                     <Image
@@ -29,5 +30,5 @@ function MainBlock() {
 }
 
 export {
-    MainBlock
+    AboutPolishing
 }

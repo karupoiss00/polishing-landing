@@ -1,7 +1,8 @@
-import {Header} from "@/components/header/Header";
-import {HeaderStub} from "@/components/header/HeaderStub";
-import {MainBlock} from "@/components/MainBlock";
+import {Header} from "@/blocks/header/Header";
+import {HeaderStub} from "@/blocks/header/HeaderStub";
+import {MainBlock} from "@/blocks/mainBlock/MainBlock";
 import {FontProvider} from "@/providers/FontProvider";
+import {AboutPolishing} from "@/blocks/aboutPolishingBlock/AboutPolishing";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
             <HeaderStub/>
             <Header/>
             <MainBlock/>
+            <AboutPolishing/>
         </div>
       </FontProvider>
   );
