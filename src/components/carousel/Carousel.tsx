@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, PropsWithChildren} from 'react';
 
-const Carousel = ({ children, delay = 3000 }) => {
+const Carousel = ({ children, delay = 3000 }: PropsWithChildren<{delay?: number}>) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const items = React.Children.toArray(children);
     const length = items.length;

@@ -1,4 +1,3 @@
-import React, {PropsWithChildren} from 'react';
 import Image from "next/image";
 import polishBefore from "../../../../public/polishBefore.jpg";
 import polishAfter from "../../../../public/polishAfter.jpg";
