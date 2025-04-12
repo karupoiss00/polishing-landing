@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from "next/image";
 import mainImage from "../../../../public/mainImage.jpg";
+import {AdaptiveImageContainer} from "@/components/adaptiveImageContainer/AdaptiveImageContainer";
 
 function MainImage() {
     return (
-        <div className="flex justify-end flex-grow">
-            <div className="fmax-w-[335px] relative lg:max-w-[620px]">
+        <div className="flex justify-center  flex-grow lg:justify-end">
+            <AdaptiveImageContainer>
                 <Image
                     src={mainImage}
                     alt="результат полировки"
@@ -18,7 +19,7 @@ function MainImage() {
                         height: 'unset',
                     }}
                 />
-            </div>
+            </AdaptiveImageContainer>
         </div>
     );
 }

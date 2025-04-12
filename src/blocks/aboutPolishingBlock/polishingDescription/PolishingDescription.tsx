@@ -13,15 +13,15 @@ const TEXTS = {
 function PolishingDescription() {
     return (
         <div className="flex flex-col justify-center">
-            <h3 className="font-[Roboto] text-[32px] leading-[1.2] font-bold mb-4 whitespace-pre-wrap mb-[20px] lg:text-[40px] lg:mb-[24px]">
+            <h3 className="font-[var(--font-roboto)] text-[32px] leading-[1.2] font-bold mb-4 whitespace-pre-wrap mb-[20px] lg:text-[40px] lg:mb-[24px]">
                 {TEXTS.heading}
             </h3>
-            <p className="font-[Roboto] text-[18px] leading-[1.5] whitespace-pre-wrap mb-[36px] lg:mg-[44px]">
+            <p className="font-[var(--font-roboto)] text-[18px] leading-[1.5] whitespace-pre-wrap mb-[36px] lg:mg-[44px]">
                 {TEXTS.description}
             </p>
             <ul className="flex flex-col gap-[16px]">
-                {TEXTS.bullets.map(text => (
-                    <li className="font-[Roboto] text-[16px] leading-[1.5]">
+                {TEXTS.bullets.map((text, i) => (
+                    <li className="font-[var(--font-roboto)] text-[16px] leading-[1.5]" key={i}>
                         <span className="flex flex-row gap-[18px] lg:gap-[16px] items-center">
                             <span className="width-[12px]">
                                 <CubeBulletIcon/>

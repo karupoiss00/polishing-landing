@@ -9,7 +9,7 @@ type LinkProps = {
 
 const Link = ({ variant = "primary", children, href }: LinkProps) => {
     const baseClasses =
-        "border-none cursor-pointer font-[Roboto] text-base px-6 py-3 transition-all duration-300 ease-in-out outline-solid";
+        "border-none cursor-pointer font-[Roboto] text-base px-6 py-3 transition-all duration-300 ease-in-out outline-solid whitespace-nowrap";
 
     const variantClasses = variant === "primary"
         ? "bg-(--primary-color) text-white border-transparent hover:bg-white hover:outline-2 hover:outline-black-600 hover:text-black hover:-translate-y-1"
