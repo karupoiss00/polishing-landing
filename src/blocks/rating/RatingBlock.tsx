@@ -3,7 +3,6 @@ import {ANCHOR_IDS} from "@/anchors/anchors";
 import {Star} from "@/components/star/Star";
 import config from "@/config/config.json"
 
-const STAR_SIZE = 50
 const STARS = new Array(5).fill(1)
 
 function RatingBlock() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import config from '@/config/config.json'
-import {CompanyName} from "@/components/companyName/CompanyName";
 
 function Footer() {
     return (

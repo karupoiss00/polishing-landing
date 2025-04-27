@@ -3,7 +3,7 @@ import {DualLayoutSection} from "@/components/dualSection/DualSection";
 import {ANCHOR_IDS} from "@/anchors/anchors";
 import {ContactLink} from "@/components/contactLink/ContactLink";
 
-function LetOrderBlock(props) {
+function LetOrderBlock() {
     return (
         <DualLayoutSection id={ANCHOR_IDS.ransom}>
             <div className="md:flex-1 space-y-3">
