@@ -9,9 +9,9 @@ function RatingBlock() {
     return (
         <div className="py-[300px] px-[20px] lg:py-[400px] lg:px-[64px] bg-white box-content flex flex-col gap-[50px]" id={ANCHOR_IDS.reviews}>
             <div className="flex flex-col  gap-[20px] justify-center items-center">
-                <h2 className="text-[32px] md:text-[40px] leading-[1.2] font-bold text-gray-900 text-center">
+                <h3 className="text-[32px] md:text-[40px] leading-[1.2] font-bold text-gray-900 text-center">
                     Рейтинг от наших клиентов
-                </h2>
+                </h3>
                 <div className="text-amber-300 flex row">
                     {STARS.map((_, i) =>  <Star className={`w-[50px] h-[50px]`} key={i}/>)}
                 </div>
