@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import config from '../../config/config.json';
 import {ANCHOR_IDS, getAnchor} from "@/anchors/anchors";
 import logo from '../../../public/logo.png'
+import {ContactLink} from "@/components/contactLink/ContactLink";
 
 const LOGO_SIZE = 48
 
@@ -38,14 +39,8 @@ function Header() {
                     </div>
 
                     <div className="hidden md:block ms-[112px]">
-                        <Link
-                            variant="primary"
-                            href={config.telegramLink}
-                         >
-                            Связаться с нами
-                        </Link>
+                       <ContactLink/>
                     </div>
-
                 </div>
             </nav>
         </header>
