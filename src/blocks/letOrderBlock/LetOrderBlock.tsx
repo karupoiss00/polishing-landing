@@ -5,7 +5,7 @@ import {ContactLink} from "@/components/contactLink/ContactLink";
 
 function LetOrderBlock(props) {
     return (
-        <DualLayoutSection id={ANCHOR_IDS.order}>
+        <DualLayoutSection id={ANCHOR_IDS.ransom}>
             <div className="md:flex-1 space-y-3">
                 <h2 className="text-[32px] md:text-[40px] leading-[1.2] font-bold text-gray-900">
                     Полировка и выкуп Apple Watch

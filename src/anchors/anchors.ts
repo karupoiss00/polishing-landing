@@ -3,7 +3,6 @@ const ANCHOR_IDS = {
     polishing: 'polishing',
     ransom: 'ransom',
     about: 'about',
-    order: 'order',
     reviews: 'reviews',
 }
 

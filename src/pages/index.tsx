@@ -6,6 +6,8 @@ import {AboutPolishing} from "@/blocks/aboutPolishingBlock/AboutPolishing";
 import Head from "next/head";
 import config from '../config/config.json'
 import {LetOrderBlock} from "@/blocks/letOrderBlock/LetOrderBlock";
+import {RatingBlock} from "@/blocks/rating/RatingBlock";
+import {Footer} from "@/blocks/footer/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +26,8 @@ export default function Home() {
             <MainBlock/>
             <AboutPolishing/>
             <LetOrderBlock/>
+            <RatingBlock/>
+            <Footer/>
         </div>
       </FontProvider>
   );
