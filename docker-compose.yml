@@ -9,13 +9,12 @@ services:
       - app-network
 
   nginx:
-    image: nginx:alpine
+    build: ./docker/nginx  # Указываем путь к Dockerfile для Nginx
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./docker/nginx/templates:/etc/nginx/templates
       - ./docker/nginx/certbot/ssl:/etc/letsencrypt
     environment:
       - DOMAIN=${DOMAIN}
