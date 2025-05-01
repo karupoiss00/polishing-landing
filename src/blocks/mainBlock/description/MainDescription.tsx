@@ -3,7 +3,7 @@ import config from '../../../config/config.json'
 import {ANCHOR_IDS, getAnchor} from "@/anchors/anchors";
 
 const TEXTS = {
-    heading: 'Полировка и выкуп\nApple Watch в Москве',
+    heading: config.heading,
     description: 'Добро пожаловать в наш сервис, где мы предлагаем\nпрофессиональную полировку часов Apple Watch.\nТакже мы с радостью выкупаем ваши часы по выгодным условиям.'
 }
 
