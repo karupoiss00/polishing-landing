@@ -3,35 +3,48 @@ version: '3.8'
 services:
   app:
     build: .
+    environment:
+      - NODE_ENV=production
     restart: unless-stopped
-    env_file: .env
     networks:
       - app-network
 
   nginx:
-    build: ./docker/nginx  # Указываем путь к Dockerfile для Nginx
-    restart: unless-stopped
+    image: nginx:1.25
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./docker/nginx/certbot/ssl:/etc/letsencrypt
+      - ./docker/nginx/nginx.conf.template:/etc/nginx/templates/nginx.conf.template
+      - ./docker/nginx/ssl.conf.template:/etc/nginx/templates/ssl.conf.template
+      - certbot-www:/var/www/certbot
+      - certbot-ssl:/etc/letsencrypt
     environment:
       - DOMAIN=${DOMAIN}
+    depends_on:
+      - app
+    restart: unless-stopped
     networks:
       - app-network
 
   certbot:
-    image: certbot/certbot
-    restart: unless-stopped
+    image: certbot/certbot:latest
     volumes:
-      - ./docker/nginx/certbot/ssl:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+      - certbot-ssl:/etc/letsencrypt
+    entrypoint: /bin/sh -c "sh /certbot/certbot.sh && sleep infinity"
     environment:
-      - EMAIL=${EMAIL}
       - DOMAIN=${DOMAIN}
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 12h & wait $${!}; certbot renew; done;'"
+      - EMAIL=${EMAIL}
+    depends_on:
+      - nginx
+    restart: unless-stopped
     networks:
       - app-network
+
+volumes:
+  certbot-www:
+  certbot-ssl:
 
 networks:
   app-network:
