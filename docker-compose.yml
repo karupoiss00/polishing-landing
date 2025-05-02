@@ -3,8 +3,6 @@ version: '3.8'
 services:
   app:
     build: .
-    environment:
-      - NODE_ENV=production
     restart: unless-stopped
     networks:
       - app-network
@@ -15,36 +13,19 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./docker/nginx/nginx.conf.template:/etc/nginx/templates/nginx.conf.template
-      - ./docker/nginx/ssl.conf.template:/etc/nginx/templates/ssl.conf.template
-      - certbot-www:/var/www/certbot
-      - certbot-ssl:/etc/letsencrypt
+      - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
+      - ./nginx/ssl.conf.template:/etc/nginx/conf.d/ssl.conf.template
+      - ./certs:/etc/nginx/certs
     environment:
       - DOMAIN=${DOMAIN}
+    command: >
+      sh -c "envsubst '$$DOMAIN' < /etc/nginx/conf.d/ssl.conf.template > /etc/nginx/conf.d/ssl.conf
+      && nginx -g 'daemon off;'"
     depends_on:
       - app
-    restart: unless-stopped
     networks:
       - app-network
-
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - certbot-www:/var/www/certbot
-      - certbot-ssl:/etc/letsencrypt
-    entrypoint: /bin/sh -c "sh /certbot/certbot.sh && sleep infinity"
-    environment:
-      - DOMAIN=${DOMAIN}
-      - EMAIL=${EMAIL}
-    depends_on:
-      - nginx
     restart: unless-stopped
-    networks:
-      - app-network
-
-volumes:
-  certbot-www:
-  certbot-ssl:
 
 networks:
   app-network:
